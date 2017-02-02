@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/plugins/CopyLayerPath" >
+        <file>icon_copy.png</file>
+    </qresource>
+    <qresource prefix="/plugins/CopyLayerPath" >
+        <file>icon_load.png</file>
+    </qresource>
+</RCC>

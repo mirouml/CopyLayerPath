@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Copy Layer Path
+qgisMinimumVersion=2.0
+description=Quickly copy selected vector or raster layer path into clipboad and paste layer into same or other instance of QGIS including current style
+version=0.1
+author=Miro Umlauf / AGE Consultants
+email=miroslav.umlauf@gmail.com
+
+about=Quickly copy selected vector or raster layer path into clipboad (Ctrl+Shift+C) and paste layer (Ctrl+Shift+V) into same or other instance of QGIS including current style
+
+tracker=https://github.com/mirouml/CopyLayerPath/issues
+repository=https://github.com/mirouml/CopyLayerPath
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=copy, layers, path
+
+homepage=https://github.com/mirouml/CopyLayerPath
+category=Plugins
+icon=icon_copy.png
+# experimental flag
+experimental=True
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
