@@ -1,2 +1,2 @@
 # CopyLayerPath
-QGIS plugin to quickly copy vector or raster layer path and paste layer into same or other instance of QGIS including current style
+Quickly copy selected vector or raster layer path into clipboad (Ctrl+Shift+C) and paste layer (Ctrl+Shift+V) into same or other instance of QGIS including current style
