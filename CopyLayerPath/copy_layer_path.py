@@ -140,7 +140,7 @@ class CopyLayerPath:
             self.toolbar.removeAction(action)
     
     def loadLayer(self):
-		"""Load layer from coppied path in clipboard if possible"""
+        """Load layer from coppied path in clipboard if possible"""
         clipboard = QApplication.clipboard()
         layer = clipboard.text()
         layer_name = layer[layer.rfind('=')+1:]
@@ -165,8 +165,8 @@ class CopyLayerPath:
         layer = self.iface.activeLayer().dataProvider().dataSourceUri()
         layer_iface_name = self.iface.activeLayer().name()
         layer_type = int(str(self.iface.activeLayer().type()))
-		
-		#Check if the layer is either vector or raster, otherwise inform it can't be copied
+        
+        #Check if the layer is either vector or raster, otherwise inform it can't be copied
         if layer_type == 0:            
             layer = layer[:layer.rfind('|')]
             layer = layer + "?vector"
@@ -177,21 +177,21 @@ class CopyLayerPath:
         else:
             self.iface.messageBar().pushMessage("Info","Can't copy this type of layer.", level=QgsMessageBar.CRITICAL, duration=5)
         if layer_to_copy:
-			#Change slashes in path to backslashes if on windows
-			if os.name == "nt":
-				layer = layer.replace("/","\\")
+            #Change slashes in path to backslashes if on windows
+            if os.name == "nt":
+                layer = layer.replace("/","\\")
             
-			# Initiate clipboard
-			clipboard = QApplication.clipboard()
-			# Copy current layer style into clipboard and get it
+            # Initiate clipboard
+            clipboard = QApplication.clipboard()
+            # Copy current layer style into clipboard and get it
             self.iface.actionCopyLayerStyle().trigger()
             active_qml = clipboard.text()
             # Paste layer path into clipboard
-			clipboard_text = layer + "=" + layer_iface_name
+            clipboard_text = layer + "=" + layer_iface_name
             clipboard.setText(clipboard_text)
             # Save copied style as QML into temp directory
-			my_path = tempfile.gettempdir()
-			file = open(os.path.join(my_path,"CopyLayerPathStyle.qml"), "w")
+            my_path = tempfile.gettempdir()
+            file = open(os.path.join(my_path,"CopyLayerPathStyle.qml"), "w")
             file.write(active_qml)
             file.close()
             self.iface.messageBar().pushMessage("Info", "Layer path copied to clipboard: " + clipboard_text, level=QgsMessageBar.INFO, duration=5)
